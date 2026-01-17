@@ -10,12 +10,14 @@ function App() {
   return (
     <>
       <h1>Memory</h1>
-      {board.map((color, index) => (
-        <div key={index} className="card">
-          {color}
-        </div>
-      ))}
-      <button onClick={resetGame}>Reset</button>
+      <div className="board">
+        {board.map((color, index) => (
+          <div key={index} className="tile">
+            {color}
+          </div>
+        ))}
+        <button onClick={resetGame}>Reset</button>
+      </div>
     </>
   );
 }
