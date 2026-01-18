@@ -5,15 +5,33 @@ const COLORS = ['red', 'green', 'blue', 'yellow'];
 
 function App() {
   const [board, setBoard] = useState(() => shuffle([...COLORS, ...COLORS]));
+  const [selectedTiles, setSelectedTiles] = useState<number[]>([]);
+
   const resetGame = () => setBoard(shuffle([...COLORS, ...COLORS]));
+
+  const handleClick = (index: number) => {
+    if (selectedTiles.includes(index)) {
+      setSelectedTiles(selectedTiles.filter((i) => i !== index));
+    } else {
+      setSelectedTiles([...selectedTiles, index]);
+    }
+  };
 
   return (
     <>
       <h1>Memory</h1>
       <div className="board">
         {board.map((color, index) => {
-          const tileClass = `tile ${color}`;
-          return <div key={index} className={tileClass} />;
+          const isSelected = selectedTiles.includes(index);
+          const tileClass = isSelected ? `tile ${color}` : `tile`;
+
+          return (
+            <div
+              onClick={() => handleClick(index)}
+              key={index}
+              className={tileClass}
+            />
+          );
         })}
         <button onClick={resetGame}>Reset</button>
       </div>
