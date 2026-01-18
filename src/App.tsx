@@ -11,11 +11,10 @@ function App() {
     <>
       <h1>Memory</h1>
       <div className="board">
-        {board.map((color, index) => (
-          <div key={index} className="tile">
-            {color}
-          </div>
-        ))}
+        {board.map((color, index) => {
+          const tileClass = `tile ${color}`;
+          return <div key={index} className={tileClass} />;
+        })}
         <button onClick={resetGame}>Reset</button>
       </div>
     </>

@@ -19,3 +19,19 @@
   align-items: center;
   justify-content: center;
 }
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
