@@ -1,7 +1,7 @@
 # memory
 A memory game created using React + TypeScript + Vite
 
-## setup and run the app
+## set up and run the app
 
 ```bash
 npm install
