@@ -3,7 +3,7 @@ import './App.css';
 
 const COLORS = ['red', 'green', 'blue', 'yellow'];
 
-function App() {
+export function App() {
   const [board, setBoard] = useState(() => shuffle([...COLORS, ...COLORS]));
   const [selectedTiles, setSelectedTiles] = useState<number[]>([]);
   const [matchedTiles, setMatchedTiles] = useState<number[]>([]);
